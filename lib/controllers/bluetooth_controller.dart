@@ -42,12 +42,9 @@ class BlueController extends GetxController {
     } catch (e) {
       print("Failed to start Bluetooth Low Energy sub-engine: $e");
     }
-
-    print("--- Found a new device! Total count: ${devicesList.length} ---");
   }
 
   Future<void> startScan() async {
-    print("start scan called");
     // 1. Evaluate runtime authorization requirements for Android 12, 13, and 14
     var scanStatus = await Permission.bluetoothScan.status;
     var connectStatus = await Permission.bluetoothConnect.status;
